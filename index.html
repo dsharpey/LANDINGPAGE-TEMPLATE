@@ -3,501 +3,534 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Transformation</title>
-   
-<style>
-   :root {
-    --primary-color: #b2aaaa; /* Light gray */
-    --accent-color: #8c2a2a; /* blaze Red */
-    --background-color: #bab4b4; /* gray */ b2aaaa
-    --text-color: #000000; /* Black */
-    --secondary-color: #bab4b3; /* Lighter gray */
-}
+    <title>Transform Your Physique | 8-Week Guaranteed Results</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #b2aaaa;
+            --accent-color: #8c2a2a;
+            --background-color: #bab4b4;
+            --text-color: #000000;
+            --secondary-color: #bab4b3;
+        }
 
-:root {
-    --primary-color: #b2aaaa;
-    --accent-color: #8c2a2a;
-    --background-color: #bab4b4;
-    --text-color: #000000;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
-}
+        /* Text Styles */
+        h1, h2, h3 {
+            color: var(--accent-color);
+            text-align: center;
+        }
 
-/* Text Styles */
-h1, h2, h3 {
-    color: var(--accent-color);
-    text-align: center;
-}
+        h1 { font-size: 3rem; }
+        h2 { font-size: 3rem; margin-bottom: 30px; }
+        h3 { font-size: 2rem; }
+        p { font-size: 1.2rem; text-align: center; }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 3rem; margin-bottom: 30px; }
-h3 { font-size: 2rem; }
-p { font-size: 1.2rem; text-align: center; }
+        /* Button Styles */
+        .cta-button {
+            background-color: var(--accent-color);
+            color: var(--background-color);
+            padding: 20px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
 
-/* Button Styles */
-.cta-button {
-    background-color: var(--accent-color);
-    color: var(--background-color);
-    padding: 20px 40px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.3rem;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    text-decoration: none;
-    display: inline-block;
-    width: 100%; /* Make all buttons full width */
-    max-width: 400px; /* Maximum width to maintain consistency */
-    margin: 20px auto; /* Center the button and add consistent spacing */
-    text-align: center;
-}
-}
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
 
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-        .package-button {
-    position: relative;
-    bottom: 0; /* Align to bottom of card */
-    margin-top: auto; /* Push button to bottom of flex container */
-}
+        /* Section Styles */
+        .hero, .info-section, .contact-section {
+            padding: 60px 40px;
+            background: var(--primary-color);
+            border-radius: 15px;
+            margin: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
 
-/* Card container to ensure equal height */
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%; /* Ensure all cards are equal height */
-    padding: 40px 30px;
-}
+        /* Card Styles */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-/* Section Styles */
-.hero, .info-section, .contact-section {
-    padding: 60px 40px;
-    background: var(--primary-color);
-    border-radius: 15px;
-    margin: 20px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
+        .card {
+            background: var(--primary-color);
+            padding: 40px 30px;
+            border-radius: 15px;
+            transition: transform 0.2s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
 
-/* Card Styles */
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
 
-.card {
-    background: var(--primary-color);
-    padding: 40px 30px;
-    border-radius: 15px;
-    transition: transform 0.2s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
+        .featured {
+            position: relative;
+            border: 2px solid var(--accent-color);
+        }
 
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
+        .featured-tag {
+            position: absolute;
+            top: -15px;
+            right: 50%;
+            transform: translateX(50%);
+            background: var(--accent-color);
+            color: var(--background-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
 
-.featured {
-    position: relative;
-    border: 2px solid var(--accent-color);
-    /* Removed any scaling */
-}
+        /* Points Styles */
+        .pain-points, .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
 
-.featured-tag {
-    position: absolute;
-    top: -15px;
-    right: 50%;
-    transform: translateX(50%);
-    background: var(--accent-color);
-    color: var(--background-color);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
+        .point {
+            background: var(--background-color);
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Points Styles */
-.pain-points, .discoveries {
-    display: grid;
-    gap: 20px;
-    margin-top: 30px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
+        .emoji {
+            font-size: 2rem;
+            min-width: 40px;
+        }
 
-.point {
-    background: var(--background-color);
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+        .point p {
+            margin: 0;
+            font-size: 1.2rem;
+            text-align: left;
+        }
 
-.emoji {
-    font-size: 2rem;
-    min-width: 40px;
-}
+        /* Package Benefits */
+        .package-benefits {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
 
-.point p {
-    margin: 0;
-    font-size: 1.2rem;
-    text-align: left;
-}
+        .package-benefits li {
+            margin: 15px 0;
+            font-size: 1.2rem;
+        }
 
-/* Package Styles */
-.package-benefits {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-.package-benefits li {
-    margin: 15px 0;
-    font-size: 1.2rem;
-}
-
-/* Popup Styles */
-.popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    backdrop-filter: blur(5px);
-}
-
-.popup-content {
-    background: var(--background-color);
-    padding: 40px;
-    border-radius: 15px;
-    max-width: 500px;
-    width: 90%;
-    position: relative;
-}
-
-/* Form Styles */
-.email-form input {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 10px;
-    background: var(--background-color);
-}
-
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1, h2 { font-size: 2rem; }
+            h3 { font-size: 1.5rem; }
+            .container { padding: 0 15px; }
+            .card-container { grid-template-columns: 1fr; }
+            .hero, .info-section, .contact-section { padding: 40px 20px; }
+        }
     </style>
-<!-- Hero Section - Focus on Transformation -->
-<section class="hero" id="hero">
-    <div class="container">
-        <h1 class="fade-in">Stop Feeling Invisible. Start Turning Heads.</h1>
-        <p class="hero-sub">Transform your body AND your confidence in the next 8 weeks - without living in the gym</p>
-        <button class="btn btn-primary">Take The First Step</button>
-        <p class="urgency">Only 5 spots available this month</p>
-    </div>
-</section>
+</head>
+<body>
 
-<!-- Pain Points - Emotional Triggers -->
-<section class="pain-points">
-    <div class="container">
-        <h2>Does This Sound Like You?</h2>
-        <div class="grid grid-2">
-            <div class="card">
-                <h3>Feeling Frustrated?</h3>
-                <p>Tired of putting in the hours but still not seeing the person you want in the mirror?</p>
-            </div>
-            <div class="card">
-                <h3>Lost Confidence?</h3>
-                <p>Remember when you used to feel confident in your favorite clothes? Let's bring that feeling back.</p>
-            </div>
-            <div class="card">
-                <h3>Overwhelmed?</h3>
-                <p>Confused by conflicting advice and endless information? It's not your fault.</p>
-            </div>
-            <div class="card">
-                <h3>Ready For Change?</h3>
-                <p>Imagine walking into any room knowing you look and feel your absolute best.</p>
-            </div>
+    <body>
+    <!-- Logo Section -->
+    <div style="text-align: center; padding: 20px;">
+        <div style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; margin: 0 auto; background: var(--primary-color); padding: 5px; display: flex; justify-content: center; align-items: center;">
+            <img src="https://i.ibb.co/39zdJNC7/jaylogo-Photoroom.png" 
+                 alt="Transform Your Physique Logo" 
+                 style="width: 280px; height: 180px;">
         </div>
     </div>
-</section>
 
-<!-- Benefits Section - Life Impact -->
-<section class="benefits">
-    <div class="container">
-        <h2>Imagine Waking Up Every Day...</h2>
-        <div class="grid grid-3">
-            <div class="card">
-                <h3>Confident & Energized</h3>
-                <p>Finally feeling proud when you catch your reflection in the mirror</p>
-            </div>
-            <div class="card">
-                <h3>In Total Control</h3>
-                <p>No more guessing about food - eat what you love while getting leaner</p>
-            </div>
-            <div class="card">
-                <h3>Looking Forward</h3>
-                <p>To showing off your progress instead of hiding under loose clothes</p>
-            </div>
-            <div class="card">
-                <h3>Stress Free</h3>
-                <p>With a proven plan and coach who's invested in your success</p>
-            </div>
-            <div class="card">
-                <h3>Accomplished</h3>
-                <p>Finally achieving the body you've always wanted (and keeping it)</p>
-            </div>
-            <div class="card">
-                <h3>Supported</h3>
-                <p>Never feel alone with 24/7 access to your coach and community</p>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Transform Your Body in 8 Weeks - Guaranteed Results</h1>
+            <p>Join Coach Jay's Proven Transformation Program - Spaces Limited to 5 Clients</p>
+            <button class="cta-button" id="openPopup">Book Free Consultation</button>
+            <p class="urgency-text">Only 5 spots remaining this month!</p>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Social Proof - Real Stories -->
-<section class="results" id="results">
-    <div class="container">
-        <h2>From Frustrated to Confident</h2>
-        <div class="grid grid-3">
-            <div class="card transformation-card">
-                <div class="before-after-container">
-                    [BEFORE/AFTER IMAGE 1]
+    <!-- Pain Points Section -->
+    <section class="info-section">
+        <div class="container">
+            <h2>Tired of...</h2>
+            <div class="pain-points">
+                <div class="point">
+                    <span class="emoji">💪</span>
+                    <p>Working out with no real results?</p>
                 </div>
-                <p>"I used to hate shopping for clothes. Now I can't wait to show off my new wardrobe! This isn't just about looking better - I feel like a new person."</p>
-                <span>- Sarah, lost 20kg in 8 weeks</span>
+                <div class="point">
+                    <span class="emoji">🥗</span>
+                    <p>Feeling lost with nutrition?</p>
+                </div>
+                <div class="point">
+                    <span class="emoji">💸</span>
+                    <p>Wasting money on programs that don't work?</p>
+                </div>
+                <div class="point">
+                    <span class="emoji">🎯</span>
+                    <p>Lacking motivation and accountability?</p>
+                </div>
             </div>
-            <!-- Add more testimonials -->
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="info-section">
+        <div class="container">
+            <h2>What You'll Get</h2>
+            <div class="benefits-grid">
+                <div class="point">
+                    <span class="emoji">📋</span>
+                    <p>Personalized workout program</p>
+                </div>
+                <div class="point">
+                    <span class="emoji">🥑</span>
+                    <p>Custom nutrition plan</p>
+                </div>
+                <div class="point">
+                    <span class="emoji">📱</span>
+                    <p>24/7 WhatsApp support</p>
+                </div>
+                <div class="point">
+                    <span class="emoji">📊</span>
+                    <p>Weekly check-ins</p>
+                </div>
+                <div class="point">
+                    <span class="emoji">📈</span>
+                    <p>Progress tracking</p>
+                </div>
+                <div class="point">
+                    <span class="emoji">👥</span>
+                    <p>Access to private community</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Options -->
+    <section class="info-section">
+        <div class="container">
+            <h2>8-Week Transformation Program</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>BASIC</h3>
+                    <ul class="package-benefits">
+                        <li>✓ 3x Weekly Sessions</li>
+                        <li>✓ Basic Nutrition Guide</li>
+                        <li>✓ Progress Tracking</li>
+                        <li>✓ Monthly Check-ins</li>
+                    </ul>
+                    <p class="price">£XXX per month</p>
+                    <a href="#" class="cta-button package-button">Start Your Journey</a>
+                </div>
+
+                <div class="card featured">
+                    <div class="featured-tag">MOST POPULAR</div>
+                    <h3>ADVANCED</h3>
+                    <ul class="package-benefits">
+                        <li>✓ Everything in Basic</li>
+                        <li>✓ Custom Meal Planning</li>
+                        <li>✓ Weekly Check-ins</li>
+                        <li>✓ Form Analysis</li>
+                        <li>✓ Priority Support</li>
+                    </ul>
+                    <p class="price">£XXX per month</p>
+                    <a href="#" class="cta-button package-button">Transform Now</a>
+                </div>
+
+                <div class="card">
+                    <h3>ELITE</h3>
+                    <ul class="package-benefits">
+                        <li>✓ Everything in Advanced</li>
+                        <li>✓ Daily Support</li>
+                        <li>✓ Live Training Sessions</li>
+                        <li>✓ VIP Communication</li>
+                        <li>✓ Custom Supplement Guide</li>
+                    </ul>
+                    <p class="price">£XXX per month</p>
+                    <a href="#" class="cta-button package-button">Go Elite</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Guarantee Section -->
+    <section class="info-section">
+        <div class="container">
+            <h2>100% Results Guarantee</h2>
+            <div class="guarantee-box">
+                <span class="emoji">✨</span>
+                <p>If you don't see results in 30 days, your next month is free</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="info-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>How long are the sessions?</h3>
+                    <p>Each session is 60 minutes, designed to maximize results while fitting into your busy schedule.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Where do we train?</h3>
+                    <p>Training can be done at your local gym or home gym setup - we'll design the program around your available equipment.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What's included?</h3>
+                    <p>Your program includes personalized workouts, nutrition guidance, progress tracking, and direct access to your coach.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are there payment plans?</h3>
+                    <p>Yes, we offer flexible payment options to suit your budget. Let's discuss during your consultation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Ready to Transform?</h2>
+            <p>Book Your Free Consultation Now</p>
+            <button class="cta-button" id="openPopupFinal">Start Your Journey</button>
+            <p class="urgency-text">Only 3 Spots Remaining This Month</p>
+        </div>
+    </section>
+
+    <!-- Popup Form -->
+    <div class="popup-overlay" id="popup">
+        <div class="popup-content">
+            <span class="close-popup" id="closePopup">&times;</span>
+            <h2>Book Your Free Consultation</h2>
+            <form id="consultationForm" class="email-form">
+                <input type="text" name="firstName" placeholder="First Name" required>
+                <input type="text" name="lastName" placeholder="Last Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone" required>
+                <button type="submit" class="cta-button">Book Consultation</button>
+            </form>
+            <p style="margin-top: 20px; font-size: 0.8em;">We'll contact you within 24 hours to schedule your consultation</p>
         </div>
     </div>
-</section>
 
-<!-- Program Promise -->
-<section class="guarantee">
-    <div class="container">
-        <h2>Your Success Is Guaranteed</h2>
-        <p class="lead">If you don't feel more confident and see visible changes in 30 days, your next month is free.</p>
-        <div class="promise-points">
-            <h3>This Is For You If:</h3>
-            <ul>
-                <li>You're ready to stop settling for less than you deserve</li>
-                <li>You want expert guidance, not another generic program</li>
-                <li>You're willing to commit to your transformation</li>
-                <li>You're tired of the endless cycle of starting over</li>
-            </ul>
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 20px 0; background: var(--primary-color);">
+        <div class="container">
+            <p>© 2024 Transform Your Physique. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Popup functionality
+        const popup = document.getElementById('popup');
+        const openPopupBtn = document.getElementById('openPopup');
+        const openPopupFinalBtn = document.getElementById('openPopupFinal');
+        const closePopupBtn = document.getElementById('closePopup');
+
+        function openPopup() {
+            popup.style.display = 'flex';
+        }
+
+        function closePopup() {
+            popup.style.display = 'none';
+        }
+
+        openPopupBtn.addEventListener('click', openPopup);
+        openPopupFinalBtn.addEventListener('click', openPopup);
+        closePopupBtn.addEventListener('click', closePopup);
+
+        // Close popup when clicking outside
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                closePopup();
+            }
+        });
+
+        // Form submission
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! We\'ll contact you shortly to schedule your consultation.');
+            closePopup();
+            this.reset();
+        });
+
+        // Escape key to close popup
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && popup.style.display === 'flex') {
+                closePopup();
+            }
+        });
+
+        // FAQ Accordion (if needed)
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
+    <!-- Guarantee Section -->
+    <section class="info-section">
+        <div class="container">
+            <h2>100% Results Guarantee</h2>
+            <div class="guarantee-box">
+                <span class="emoji">✨</span>
+                <p>If you don't see results in 30 days, your next month is free</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="info-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>How long are the sessions?</h3>
+                    <p>Each session is 60 minutes, designed to maximize results while fitting into your busy schedule.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Where do we train?</h3>
+                    <p>Training can be done at your local gym or home gym setup - we'll design the program around your available equipment.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What's included?</h3>
+                    <p>Your program includes personalized workouts, nutrition guidance, progress tracking, and direct access to your coach.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are there payment plans?</h3>
+                    <p>Yes, we offer flexible payment options to suit your budget. Let's discuss during your consultation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Ready to Transform?</h2>
+            <p>Book Your Free Consultation Now</p>
+            <button class="cta-button" id="openPopupFinal">Start Your Journey</button>
+            <p class="urgency-text">Only 3 Spots Remaining This Month</p>
+        </div>
+    </section>
+
+    <!-- Popup Form -->
+    <div class="popup-overlay" id="popup">
+        <div class="popup-content">
+            <span class="close-popup" id="closePopup">&times;</span>
+            <h2>Book Your Free Consultation</h2>
+            <form id="consultationForm" class="email-form">
+                <input type="text" name="firstName" placeholder="First Name" required>
+                <input type="text" name="lastName" placeholder="Last Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone" required>
+                <button type="submit" class="cta-button">Book Consultation</button>
+            </form>
+            <p style="margin-top: 20px; font-size: 0.8em;">We'll contact you within 24 hours to schedule your consultation</p>
         </div>
     </div>
-</section>
 
-<!-- Call To Action -->
-<section class="final-cta">
-    <div class="container">
-        <h2>Ready To Transform Your Life?</h2>
-        <p>The next 8 weeks will pass anyway. The question is - will you be closer to your dream body or still wishing you'd started sooner?</p>
-        <button class="btn btn-primary">Start Your Journey Now</button>
-        <p class="urgency-final">Only 3 spots remaining this month</p>
-    </div>
-</section>
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 20px 0; background: var(--primary-color);">
+        <div class="container">
+            <p>© 2024 Transform Your Physique. All rights reserved.</p>
+        </div>
+    </footer>
 
-    // Add this before closing </body> tag
+    <script>
+        // Popup functionality
+        const popup = document.getElementById('popup');
+        const openPopupBtn = document.getElementById('openPopup');
+        const openPopupFinalBtn = document.getElementById('openPopupFinal');
+        const closePopupBtn = document.getElementById('closePopup');
 
-<script>
-// Smooth Scroll for Navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollTop({
-            behavior: 'smooth'
-        });
-    });
-});
+        function openPopup() {
+            popup.style.display = 'flex';
+        }
 
-// Navigation Background Change on Scroll
-window.addEventListener('scroll', function() {
-    const nav = document.querySelector('.nav');
-    if (window.scrollY > 50) {
-        nav.classList.add('nav-scrolled');
-    } else {
-        nav.classList.remove('nav-scrolled');
-    }
-});
+        function closePopup() {
+            popup.style.display = 'none';
+        }
 
-// Mobile Menu Toggle
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
+        openPopupBtn.addEventListener('click', openPopup);
+        openPopupFinalBtn.addEventListener('click', openPopup);
+        closePopupBtn.addEventListener('click', closePopup);
 
-mobileMenuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    mobileMenuBtn.classList.toggle('active');
-});
-
-// Form Submission
-const form = document.querySelector('#contact-form');
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Collect form data
-    const formData = new FormData(this);
-    
-    // Basic validation
-    let isValid = true;
-    formData.forEach((value, key) => {
-        if (!value) isValid = false;
-    });
-
-    if (!isValid) {
-        alert('Please fill in all fields');
-        return;
-    }
-
-    // Show success message
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerText;
-    submitBtn.innerText = 'Sending...';
-
-    // Simulate form submission (replace with actual endpoint)
-    setTimeout(() => {
-        submitBtn.innerText = 'Sent Successfully!';
-        form.reset();
-        setTimeout(() => {
-            submitBtn.innerText = originalText;
-        }, 2000);
-    }, 1000);
-});
-
-// FAQ Accordion
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-        const answer = item.querySelector('.faq-answer');
-        const isOpen = item.classList.contains('active');
-        
-        // Close all other items
-        faqItems.forEach(otherItem => {
-            otherItem.classList.remove('active');
-            otherItem.querySelector('.faq-answer').style.maxHeight = null;
+        // Close popup when clicking outside
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                closePopup();
+            }
         });
 
-        // Toggle current item
-        if (!isOpen) {
-            item.classList.add('active');
-            answer.style.maxHeight = answer.scrollHeight + 'px';
-        }
-    });
-});
+        // Form submission
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! We\'ll contact you shortly to schedule your consultation.');
+            closePopup();
+            this.reset();
+        });
 
-// Spots Counter (for urgency)
-function updateSpots() {
-    const spotsElement = document.querySelector('.spots-left');
-    let spots = parseInt(localStorage.getItem('spotsLeft')) || 5;
-    
-    if (spots > 0) {
-        spotsElement.textContent = `Only ${spots} spots remaining!`;
-    } else {
-        spotsElement.textContent = 'Waitlist Only';
-    }
-}
+        // Escape key to close popup
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && popup.style.display === 'flex') {
+                closePopup();
+            }
+        });
 
-// Intersection Observer for Animations
-const observerOptions = {
-    threshold: 0.2
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.card, .section-title, .stat-card').forEach(el => {
-    observer.observe(el);
-});
-
-// Testimonial Slider
-let currentSlide = 0;
-const slides = document.querySelectorAll('.testimonial-slide');
-const totalSlides = slides.length;
-
-function showSlide(n) {
-    slides.forEach(slide => slide.style.display = 'none');
-    currentSlide = (n + totalSlides) % totalSlides;
-    slides[currentSlide].style.display = 'block';
-}
-
-document.querySelector('.next-slide').addEventListener('click', () => {
-    showSlide(currentSlide + 1);
-});
-
-document.querySelector('.prev-slide').addEventListener('click', () => {
-    showSlide(currentSlide - 1);
-});
-
-// Initialize
-document.addEventListener('DOMContentLoaded', function() {
-    updateSpots();
-    showSlide(0);
-});
-
-// Add some CSS classes for animations
-const additionalStyles = `
-    .animate {
-        animation: fadeInUp 0.6s ease-out forwards;
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .nav-scrolled {
-        background: rgba(10, 10, 10, 0.95);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-`;
-
-// Add styles to document
-const styleSheet = document.createElement('style');
-styleSheet.textContent = additionalStyles;
-document.head.appendChild(styleSheet);
-</script>
+        // FAQ Accordion (if needed)
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
