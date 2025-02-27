@@ -610,53 +610,84 @@ p { font-size: 1.2rem; text-align: center; }
     </footer>
 
     <script>
-        // Popup functionality
-        const popup = document.getElementById('popup');
-        const openPopupBtn = document.getElementById('openPopup');
-        const openPopupFinalBtn = document.getElementById('openPopupFinal');
-        const closePopupBtn = document.getElementById('closePopup');
+// All popup and form functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all elements
+    const popup = document.getElementById('popup');
+    const allCTAButtons = document.querySelectorAll('.cta-button');
+    const closePopupBtn = document.getElementById('closePopup');
+    const consultationForm = document.getElementById('consultationForm');
 
-        function openPopup() {
-            popup.style.display = 'flex';
-        }
+    // Function to open popup
+    function openPopup() {
+        popup.style.display = 'flex';
+    }
 
-        function closePopup() {
-            popup.style.display = 'none';
-        }
+    // Function to close popup
+    function closePopup() {
+        popup.style.display = 'none';
+    }
 
-        openPopupBtn.addEventListener('click', openPopup);
-        openPopupFinalBtn.addEventListener('click', openPopup);
-        closePopupBtn.addEventListener('click', closePopup);
-
-        // Close popup when clicking outside
-        popup.addEventListener('click', (e) => {
-            if (e.target === popup) {
-                closePopup();
+    // Add click event to all CTA buttons
+    allCTAButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            
+            // Get the button's purpose from its text or href
+            const buttonPurpose = button.textContent.trim().toLowerCase();
+            
+            // Set hidden input value based on package selected
+            const packageInput = document.getElementById('selectedPackage');
+            if (packageInput) {
+                if (buttonPurpose.includes('basic')) {
+                    packageInput.value = 'Basic Package';
+                } else if (buttonPurpose.includes('advanced')) {
+                    packageInput.value = 'Advanced Package';
+                } else if (buttonPurpose.includes('elite')) {
+                    packageInput.value = 'Elite Package';
+                }
             }
-        });
 
-        // Form submission
-        document.getElementById('consultationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you! We\'ll contact you shortly to schedule your consultation.');
+            openPopup();
+        });
+    });
+
+    // Close popup when clicking the close button
+    closePopupBtn.addEventListener('click', closePopup);
+
+    // Close popup when clicking outside
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
             closePopup();
-            this.reset();
-        });
+        }
+    });
 
-        // Escape key to close popup
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && popup.style.display === 'flex') {
-                closePopup();
-            }
-        });
+    // Close popup with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup.style.display === 'flex') {
+            closePopup();
+        }
+    });
 
-        // FAQ Accordion (if needed)
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
-        });
-    </script>
+    // Form submission
+    consultationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Get form data
+        const formData = new FormData(this);
+        const formEntries = Object.fromEntries(formData);
+
+        // You can add your form submission logic here
+        // For now, we'll just show a success message
+        alert('Thank you! We\'ll contact you within 24 hours to schedule your consultation.');
+        
+        // Reset form and close popup
+        this.reset();
+        closePopup();
+    });
+});
+
+// Add this to the form HTML
+</script>
 </body>
 </html>
