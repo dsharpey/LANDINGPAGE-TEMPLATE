@@ -6,22 +6,31 @@
     <title>Fitness Transformation</title>
    
 <style>
-      :root {
-    --primary: #000000;
-    --secondary: #ffffff;
-    --accent: #ff0000;
+   :root {
+    --primary-color: #b2aaaa; /* Light gray */
+    --accent-color: #8c2a2a; /* blaze Red */
+    --background-color: #bab4b4; /* gray */ b2aaaa
+    --text-color: #000000; /* Black */
+    --secondary-color: #bab4b3; /* Lighter gray */
+}
+
+:root {
+    --primary-color: #b2aaaa;
+    --accent-color: #8c2a2a;
+    --background-color: #bab4b4;
+    --text-color: #000000;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
-    background-color: var(--secondary);
-    color: var(--primary);
+    background-color: var(--background-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -29,187 +38,185 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-.header {
     text-align: center;
-    padding: 40px 0;
 }
 
-.logo {
-    max-width: 200px;
-    margin-bottom: 20px;
-}
-
-.hero {
+/* Text Styles */
+h1, h2, h3 {
+    color: var(--accent-color);
     text-align: center;
-    padding: 60px 0;
 }
 
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
+h1 { font-size: 3rem; }
+h2 { font-size: 3rem; margin-bottom: 30px; }
+h3 { font-size: 2rem; }
+p { font-size: 1.2rem; text-align: center; }
 
-.hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
+/* Button Styles */
 .cta-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: var(--accent);
-    color: var(--secondary);
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    padding: 20px 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    display: inline-block;
+    width: 100%; /* Make all buttons full width */
+    max-width: 400px; /* Maximum width to maintain consistency */
+    margin: 20px auto; /* Center the button and add consistent spacing */
+    text-align: center;
+}
 }
 
 .cta-button:hover {
-    background-color: #cc0000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+        .package-button {
+    position: relative;
+    bottom: 0; /* Align to bottom of card */
+    margin-top: auto; /* Push button to bottom of flex container */
 }
 
-.features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding: 60px 0;
+/* Card container to ensure equal height */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Ensure all cards are equal height */
+    padding: 40px 30px;
 }
 
-.feature-card {
+/* Section Styles */
+.hero, .info-section, .contact-section {
+    padding: 60px 40px;
+    background: var(--primary-color);
+    border-radius: 15px;
+    margin: 20px;
     text-align: center;
-    padding: 30px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.feature-card img {
-    width: 60px;
-    margin-bottom: 20px;
-}
-
-.pricing {
-    padding: 60px 0;
-}
-
-.pricing-cards {
+/* Card Styles */
+.card-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    margin-top: 40px;
 }
 
-.pricing-card {
-    padding: 30px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
+.card {
+    background: var(--primary-color);
+    padding: 40px 30px;
+    border-radius: 15px;
+    transition: transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.pricing-card.popular {
-    background-color: var(--primary);
-    color: var(--secondary);
-    transform: scale(1.05);
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.pricing-card h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
+.featured {
+    position: relative;
+    border: 2px solid var(--accent-color);
+    /* Removed any scaling */
 }
 
-.pricing-card ul {
+.featured-tag {
+    position: absolute;
+    top: -15px;
+    right: 50%;
+    transform: translateX(50%);
+    background: var(--accent-color);
+    color: var(--background-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Points Styles */
+.pain-points, .discoveries {
+    display: grid;
+    gap: 20px;
+    margin-top: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.point {
+    background: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.emoji {
+    font-size: 2rem;
+    min-width: 40px;
+}
+
+.point p {
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+/* Package Styles */
+.package-benefits {
     list-style: none;
-    margin-bottom: 30px;
+    padding: 0;
+    margin: 20px 0;
 }
 
-.pricing-card li {
-    margin-bottom: 10px;
+.package-benefits li {
+    margin: 15px 0;
+    font-size: 1.2rem;
 }
 
-.about {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.about img {
-    width: 200px;
-    border-radius: 50%;
-    margin-bottom: 30px;
-}
-
-.form-section {
-    padding: 60px 0;
-    text-align: center;
-    background-color: #f5f5f5;
-}
-
-form {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-input[type="email"] {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.modal {
-    display: none;
+/* Popup Styles */
+.popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
 }
 
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--secondary);
-    padding: 30px;
-    border-radius: 10px;
+.popup-content {
+    background: var(--background-color);
+    padding: 40px;
+    border-radius: 15px;
     max-width: 500px;
     width: 90%;
+    position: relative;
 }
 
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
+/* Form Styles */
+.email-form input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background: var(--background-color);
 }
 
-/* Additional Mobile Optimizations */
-@media screen and (max-width: 480px) {
-    :root {
-        --h1-size: 2rem;
-        --h2-size: 1.8rem;
-        --h3-size: 1.3rem;
-    }
-
-    .container {
-        padding: 0 var(--spacing-sm);
-    }
-}
-
-/* Touch Device Optimizations */
-@media (hover: none) {
-    .card:hover {
-        transform: none;
-    }
-
-    .btn:hover {
-        transform: none;
-    }
-}
     </style>
 <!-- Hero Section - Focus on Transformation -->
 <section class="hero" id="hero">
