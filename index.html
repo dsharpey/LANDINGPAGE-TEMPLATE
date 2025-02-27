@@ -181,34 +181,446 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
-            :root {
-                --h1-size: 2.5rem;
-                --h2-size: 2rem;
-                --h3-size: 1.5rem;
-            }
+       /* Mobile Optimization */
+@media screen and (max-width: 768px) {
+    /* Typography Adjustments */
+    :root {
+        --h1-size: 2.5rem;
+        --h2-size: 2rem;
+        --h3-size: 1.5rem;
+        --body-size: 1rem;
+        
+        /* Adjust Spacing */
+        --spacing-xl: 4rem;
+        --spacing-lg: 3rem;
+        --spacing-md: 1.5rem;
+        --container-padding: 15px;
+    }
 
-            .grid-2, .grid-3, .grid-4 {
-                grid-template-columns: 1fr;
-            }
+    /* Container */
+    .container {
+        padding: 0 var(--container-padding);
+    }
 
-            .nav-links {
-                display: none; /* Add mobile menu functionality */
-            }
-        }
+    /* Navigation */
+    .nav {
+        padding: var(--spacing-sm) 0;
+    }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--dark-bg);
+        flex-direction: column;
+        align-items: center;
+        padding: var(--spacing-lg) 0;
+        transition: var(--transition-speed);
+    }
 
-        .fade-in {
-            animation: fadeIn var(--transition-speed);
-        }
+    .nav-links.active {
+        left: 0;
+    }
+
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+        display: block;
+        z-index: 1000;
+    }
+
+    /* Grid Adjustments */
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-sm);
+    }
+
+    /* Hero Section */
+    .hero {
+        text-align: center;
+        padding: var(--spacing-xl) var(--spacing-sm);
+    }
+
+    .hero h1 {
+        font-size: var(--h1-size);
+        line-height: 1.2;
+    }
+
+    /* Cards */
+    .card {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    /* Benefits Section */
+    .benefits .grid {
+        gap: var(--spacing-md);
+    }
+
+    /* Testimonials */
+    .transformation-card {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .before-after-container {
+        height: auto;
+    }
+
+    /* Stats */
+    .stats-container {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+    }
+
+    /* Forms */
+    .form-group {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    input, textarea {
+        padding: var(--spacing-sm);
+    }
+
+    /* Buttons */
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    /* FAQ */
+    .faq-item {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    /* Final CTA */
+    .final-cta {
+        text-align: center;
+        padding: var(--spacing-lg) 0;
+    }
+
+    /* Images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Spacing Utilities */
+    .section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    /* Animation Adjustments */
+    .animate {
+        animation-duration: 0.4s;
+    }
+}
+
+/* Additional Mobile Optimizations */
+@media screen and (max-width: 480px) {
+    :root {
+        --h1-size: 2rem;
+        --h2-size: 1.8rem;
+        --h3-size: 1.3rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .card:hover {
+        transform: none;
+    }
+
+    .btn:hover {
+        transform: none;
+    }
+}
     </style>
-</head>
-<body>
-    <!-- Add page content here -->
-</body>
-</html>
+<!-- Hero Section - Focus on Transformation -->
+<section class="hero" id="hero">
+    <div class="container">
+        <h1 class="fade-in">Stop Feeling Invisible. Start Turning Heads.</h1>
+        <p class="hero-sub">Transform your body AND your confidence in the next 8 weeks - without living in the gym</p>
+        <button class="btn btn-primary">Take The First Step</button>
+        <p class="urgency">Only 5 spots available this month</p>
+    </div>
+</section>
+
+<!-- Pain Points - Emotional Triggers -->
+<section class="pain-points">
+    <div class="container">
+        <h2>Does This Sound Like You?</h2>
+        <div class="grid grid-2">
+            <div class="card">
+                <h3>Feeling Frustrated?</h3>
+                <p>Tired of putting in the hours but still not seeing the person you want in the mirror?</p>
+            </div>
+            <div class="card">
+                <h3>Lost Confidence?</h3>
+                <p>Remember when you used to feel confident in your favorite clothes? Let's bring that feeling back.</p>
+            </div>
+            <div class="card">
+                <h3>Overwhelmed?</h3>
+                <p>Confused by conflicting advice and endless information? It's not your fault.</p>
+            </div>
+            <div class="card">
+                <h3>Ready For Change?</h3>
+                <p>Imagine walking into any room knowing you look and feel your absolute best.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section - Life Impact -->
+<section class="benefits">
+    <div class="container">
+        <h2>Imagine Waking Up Every Day...</h2>
+        <div class="grid grid-3">
+            <div class="card">
+                <h3>Confident & Energized</h3>
+                <p>Finally feeling proud when you catch your reflection in the mirror</p>
+            </div>
+            <div class="card">
+                <h3>In Total Control</h3>
+                <p>No more guessing about food - eat what you love while getting leaner</p>
+            </div>
+            <div class="card">
+                <h3>Looking Forward</h3>
+                <p>To showing off your progress instead of hiding under loose clothes</p>
+            </div>
+            <div class="card">
+                <h3>Stress Free</h3>
+                <p>With a proven plan and coach who's invested in your success</p>
+            </div>
+            <div class="card">
+                <h3>Accomplished</h3>
+                <p>Finally achieving the body you've always wanted (and keeping it)</p>
+            </div>
+            <div class="card">
+                <h3>Supported</h3>
+                <p>Never feel alone with 24/7 access to your coach and community</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Proof - Real Stories -->
+<section class="results" id="results">
+    <div class="container">
+        <h2>From Frustrated to Confident</h2>
+        <div class="grid grid-3">
+            <div class="card transformation-card">
+                <div class="before-after-container">
+                    [BEFORE/AFTER IMAGE 1]
+                </div>
+                <p>"I used to hate shopping for clothes. Now I can't wait to show off my new wardrobe! This isn't just about looking better - I feel like a new person."</p>
+                <span>- Sarah, lost 20kg in 8 weeks</span>
+            </div>
+            <!-- Add more testimonials -->
+        </div>
+    </div>
+</section>
+
+<!-- Program Promise -->
+<section class="guarantee">
+    <div class="container">
+        <h2>Your Success Is Guaranteed</h2>
+        <p class="lead">If you don't feel more confident and see visible changes in 30 days, your next month is free.</p>
+        <div class="promise-points">
+            <h3>This Is For You If:</h3>
+            <ul>
+                <li>You're ready to stop settling for less than you deserve</li>
+                <li>You want expert guidance, not another generic program</li>
+                <li>You're willing to commit to your transformation</li>
+                <li>You're tired of the endless cycle of starting over</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Call To Action -->
+<section class="final-cta">
+    <div class="container">
+        <h2>Ready To Transform Your Life?</h2>
+        <p>The next 8 weeks will pass anyway. The question is - will you be closer to your dream body or still wishing you'd started sooner?</p>
+        <button class="btn btn-primary">Start Your Journey Now</button>
+        <p class="urgency-final">Only 3 spots remaining this month</p>
+    </div>
+</section>
+
+    // Add this before closing </body> tag
+
+<script>
+// Smooth Scroll for Navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollTop({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Navigation Background Change on Scroll
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('.nav');
+    if (window.scrollY > 50) {
+        nav.classList.add('nav-scrolled');
+    } else {
+        nav.classList.remove('nav-scrolled');
+    }
+});
+
+// Mobile Menu Toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    mobileMenuBtn.classList.toggle('active');
+});
+
+// Form Submission
+const form = document.querySelector('#contact-form');
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Collect form data
+    const formData = new FormData(this);
+    
+    // Basic validation
+    let isValid = true;
+    formData.forEach((value, key) => {
+        if (!value) isValid = false;
+    });
+
+    if (!isValid) {
+        alert('Please fill in all fields');
+        return;
+    }
+
+    // Show success message
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerText;
+    submitBtn.innerText = 'Sending...';
+
+    // Simulate form submission (replace with actual endpoint)
+    setTimeout(() => {
+        submitBtn.innerText = 'Sent Successfully!';
+        form.reset();
+        setTimeout(() => {
+            submitBtn.innerText = originalText;
+        }, 2000);
+    }, 1000);
+});
+
+// FAQ Accordion
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        const isOpen = item.classList.contains('active');
+        
+        // Close all other items
+        faqItems.forEach(otherItem => {
+            otherItem.classList.remove('active');
+            otherItem.querySelector('.faq-answer').style.maxHeight = null;
+        });
+
+        // Toggle current item
+        if (!isOpen) {
+            item.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+    });
+});
+
+// Spots Counter (for urgency)
+function updateSpots() {
+    const spotsElement = document.querySelector('.spots-left');
+    let spots = parseInt(localStorage.getItem('spotsLeft')) || 5;
+    
+    if (spots > 0) {
+        spotsElement.textContent = `Only ${spots} spots remaining!`;
+    } else {
+        spotsElement.textContent = 'Waitlist Only';
+    }
+}
+
+// Intersection Observer for Animations
+const observerOptions = {
+    threshold: 0.2
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.card, .section-title, .stat-card').forEach(el => {
+    observer.observe(el);
+});
+
+// Testimonial Slider
+let currentSlide = 0;
+const slides = document.querySelectorAll('.testimonial-slide');
+const totalSlides = slides.length;
+
+function showSlide(n) {
+    slides.forEach(slide => slide.style.display = 'none');
+    currentSlide = (n + totalSlides) % totalSlides;
+    slides[currentSlide].style.display = 'block';
+}
+
+document.querySelector('.next-slide').addEventListener('click', () => {
+    showSlide(currentSlide + 1);
+});
+
+document.querySelector('.prev-slide').addEventListener('click', () => {
+    showSlide(currentSlide - 1);
+});
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+    updateSpots();
+    showSlide(0);
+});
+
+// Add some CSS classes for animations
+const additionalStyles = `
+    .animate {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .nav-scrolled {
+        background: rgba(10, 10, 10, 0.95);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+`;
+
+// Add styles to document
+const styleSheet = document.createElement('style');
+styleSheet.textContent = additionalStyles;
+document.head.appendChild(styleSheet);
+</script>
