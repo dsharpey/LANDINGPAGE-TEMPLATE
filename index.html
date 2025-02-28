@@ -127,11 +127,15 @@ p { font-size: 1.2rem; text-align: center; }
 }
 
 /* Points Styles */
+/* Points Styles */
 .pain-points, .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* increased from 280px */
     gap: 20px;
     margin-top: 30px;
+    width: 90%; /* makes container wider */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .point {
@@ -141,17 +145,14 @@ p { font-size: 1.2rem; text-align: center; }
     display: flex;
     align-items: center;
     gap: 15px;
-}
-
-.emoji {
-    font-size: 2rem;
-    min-width: 40px;
+    width: 100%; /* ensures full width */
 }
 
 .point p {
     margin: 0;
     font-size: 1.2rem;
     text-align: left;
+    width: 100%; /* ensures text uses full width */
 }
 
 /* Package Benefits */
@@ -476,13 +477,6 @@ p { font-size: 1.2rem; text-align: center; }
             <p style="margin-top: 20px; font-size: 0.8em;">We'll contact you within 24 hours to schedule your consultation</p>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer style="text-align: center; padding: 20px 0; background: var(--primary-color);">
-        <div class="container">
-            <p>© 2024 Transform Your Physique. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script>
         // Popup functionality
